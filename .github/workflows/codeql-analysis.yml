@@ -38,7 +38,8 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        bash Builder/Build_HEVD_Vulnerable_x64.sh
+        cd Builder
+        bash Build_HEVD_Vulnerable_x64.sh
     - name: Free disk space
       run: |
           sudo docker rmi $(docker image ls -aq) >/dev/null 2>&1 || true
